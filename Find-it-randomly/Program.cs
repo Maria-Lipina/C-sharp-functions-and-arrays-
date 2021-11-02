@@ -1,4 +1,4 @@
-﻿// Методы
+﻿// Методы для цикла
 
 void FillArray(int[] collection)
 {
