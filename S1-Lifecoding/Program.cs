@@ -50,30 +50,32 @@ string name = day switch
 7 => "воскресенье",
 _ => "нет дня недели с таким номером"
 };
+WriteLine(name);
 
 WriteLine();
 WriteLine("4. Найти максимальное из 3 чисел");
 
-// int number1 = 8;
-// int number2 = 2;
-// int number3 = 15;
+int num = Convert.ToInt32(ReadLine());
+int num1 = Convert.ToInt32(ReadLine());
+int num2 = Convert.ToInt32(ReadLine());
 
-// int max = number1;
-// if (number2 > max) max = number2;
-// if (number3 > max) max = number3;
-// Console.WriteLine(max);
-WriteLine();
-WriteLine("5. Написать программу вычисления значения функции y=f(a)");
+int max = num1;
+if (num1 > max) max = num1;
+if (num2 > max) max = num2;
+Console.WriteLine(max);
 
-// int f(int a)
-// {
-//     //предположим, функция f=a^3 - это было неправильно, надо было уточнять у Сергея
-//     return a*a*a;
-// }
-// int y1 = f(2);
-// Console.WriteLine(y1);
 WriteLine();
-WriteLine("6. Выяснить является ли число чётным");  
+WriteLine("5. Написать программу вычисления значения функции y=f(a). Как уточнили потом: функция y=sin(a)");
+
+double sin(double a)
+{
+    return Math.Asin(a);
+}
+double y1 = sin(-0.5);
+Console.WriteLine(y1);
+
+WriteLine();
+WriteLine("6. Выяснить является ли число чётным");
 
 // int с = 3;
 
