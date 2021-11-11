@@ -86,9 +86,6 @@ else {Console.WriteLine("нечетное");}
 
 WriteLine();
 WriteLine("7. Показать числа от -N до N");
-
-WriteLine();
-WriteLine("7. Показать числа от -N до N");
 void PrintArray(int[] collect)
 {
     for (int pos = 0; pos < collect.Length; pos ++) Console.Write($"{collect[pos]} ");
@@ -111,27 +108,31 @@ PrintArray(FillArray(7));
 WriteLine();
 WriteLine("8. Показать четные числа от 1 до N");
 
-// int n = 10;
+int n = 10;
 
-// for (int i = 0; i<= n; i++)
-// {
-//     if (i%2==0)
-//     {
-//     Console.WriteLine(i);
-//     }
-// }
+for (int i = 0; i<= n; i++)
+{
+    if (i%2==0)
+    {
+    Console.WriteLine(i);
+    }
+}
+
 WriteLine();
 WriteLine("9. Показать последнюю цифру трёхзначного числа");
 
-// int number = 234;
-// string text = ToString(number);
-// Console.WriteLine(text [2]);
+int number = 234;
+string text = (number);
+Console.WriteLine(text [0]);
+
 WriteLine();
 WriteLine("10. Показать вторую цифру трёхзначного числа");
 
-// int num = 234;
-// string t = ToString(num);
-// Console.WriteLine(t [1]);
+int number1 = 234;
+string t = IntToString(number1);
+Console.WriteLine(t [1]);
+
+
 WriteLine();
 WriteLine("11. Дано число из отрезка [10, 99]. Показать наибольшую цифру числа");
 
@@ -210,7 +211,7 @@ WriteLine("18. Проверить истинность утверждения ¬
 
 // bool logic(bool x, bool y)
 // {
-//     return !(x || y) == !x && !y;
+//     return !(x || y) == (!x && !y); //  закон моргана всегда истина. Без скобок == выполняется до &&
 // }
 
 // Console.WriteLine(logic(true, true));
