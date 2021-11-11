@@ -2,22 +2,15 @@
 using static System.Convert;
 
 WriteLine();
-WriteLine("7. Показать числа от -N до N");
-void PrintArray(int[] collect)
-{
-    for (int pos = 0; pos < collect.Length; pos ++) Console.Write($"{collect[pos]} ");
-    Console.WriteLine();
-    Console.WriteLine();
-}
+WriteLine("9. Показать последнюю цифру трёхзначного числа"); //Счет цифр идет от единиц, а не высшего разряда, как здесь от сотен. От мин к макс
 
-int [] FillArray(int N)
-{
-int[] collect = new int[N+N+1];
-for (int pos = 0; pos < collect.Length; pos++) 
-{
-    collect[pos] = -N;
-N--; // тот самый момент, когда сначала написал код и только потом понял, почему он работает как надо.
-}
-return collect;
-}
-PrintArray(FillArray(7));
+int number = 234;
+string text = Convert.ToString(number);
+Console.WriteLine(text [0]);
+
+WriteLine();
+WriteLine("10. Показать вторую цифру трёхзначного числа");
+
+int number1 = 567;
+string text1 = Convert.ToString(number1);
+Console.WriteLine(text1 [1]);
