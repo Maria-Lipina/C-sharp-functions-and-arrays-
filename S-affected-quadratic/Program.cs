@@ -24,7 +24,7 @@ double TwoSolutions (double a, double b, double c)
 WriteLine("Для решения уравнения ax^2+bx+c=0 введите коэффициенты");
 
 Write("a = ");
-double a1 = double.Parse(ReadLine());
+double a1 = Convert.ToDouble(ReadLine());
 
 if (a1 == 0) 
 {
@@ -34,10 +34,10 @@ if (a1 == 0)
 }
 
 Write("b = ");
-double b1 = double.Parse(ReadLine());
+double b1 = Convert.ToDouble(ReadLine());
 
 Write("c = ");
-double c1 = double.Parse(ReadLine());
+double c1 = Convert.ToDouble(ReadLine());
 
 double D1 = b1*b1 - a1*c1*4;
 
