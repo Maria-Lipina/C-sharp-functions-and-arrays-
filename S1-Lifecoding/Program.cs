@@ -107,18 +107,26 @@ return collect;
 }
 PrintArray(FillArray(ToInt32(ReadLine()))); // и превзошел самого себя по количеству скобочек на строку
 
+
 WriteLine();
 WriteLine("8. Показать четные числа от 1 до N");
 
-int n = 10;
+int[] SelectEvens(int n)
+{
 
-for (int i = 0; i<= n; i++)
+int [] result = new int [n+1];
+
+for (int i = 0; i<= result.Length; i++)
 {
     if (i%2==0)
     {
-    Console.WriteLine(i);
+    result [i] = i;
     }
 }
+return result;
+}
+
+PrintArray(SelectEvens(ToInt32(ReadLine())));
 
 WriteLine();
 WriteLine("9. Показать последнюю цифру трёхзначного числа");
