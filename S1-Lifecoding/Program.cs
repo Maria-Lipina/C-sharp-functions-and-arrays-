@@ -1,9 +1,10 @@
 ﻿using static System.Console;
+using static System.Convert;
 
 // Почувствуй себя интерном (семинар 04.11.2021)
 WriteLine("0. Вывести квадрат числа");
 
-int x = Convert.ToInt32(ReadLine());
+int x = ToInt32(ReadLine());
 int power = x*x;
 WriteLine(power);
 
@@ -17,8 +18,8 @@ if (z==x) return true;
 else return false; 
 }
 
-int x1 = Convert.ToInt32(ReadLine());
-int x2 = Convert.ToInt32(ReadLine());
+int x1 = ToInt32(ReadLine());
+int x2 = ToInt32(ReadLine());
 WriteLine(IsQuadrat(x1, x2));
 
 WriteLine();
@@ -30,14 +31,14 @@ if (y>x) Console.WriteLine(y + " больше " + x);
 else Console.WriteLine(x +" больше "+ y);
 }
 
-int x3 = Convert.ToInt32(ReadLine());
-int x4 = Convert.ToInt32(ReadLine());
+int x3 = ToInt32(ReadLine());
+int x4 = ToInt32(ReadLine());
 Compare(x3, x4);
 
 WriteLine();
 WriteLine("3. По заданному номеру дня недели вывести его название");
 
-int day = Convert.ToInt32(ReadLine());
+int day = ToInt32(ReadLine());
 
 string name = day switch
 {
@@ -55,9 +56,9 @@ WriteLine(name);
 WriteLine();
 WriteLine("4. Найти максимальное из 3 чисел");
 
-int num = Convert.ToInt32(ReadLine());
-int num1 = Convert.ToInt32(ReadLine());
-int num2 = Convert.ToInt32(ReadLine());
+int num = ToInt32(ReadLine());
+int num1 = ToInt32(ReadLine());
+int num2 = ToInt32(ReadLine());
 
 int max = num1;
 if (num1 > max) max = num1;
@@ -69,18 +70,20 @@ WriteLine("5. Написать программу вычисления знач�
 
 double sin(double a)
 {
-    return Math.Asin(a);
+    return Math.Asin(a); //тот самый момент когда код работает, но как? Непонятно
 }
-double y1 = sin(-0.5);
-Console.WriteLine(y1);
+
+double a = sin(ToDouble(ReadLine()));
+Console.WriteLine(a);
 
 WriteLine();
 WriteLine("6. Выяснить является ли число чётным");
 
-// int с = 3;
+int b = ToInt32(ReadLine());
 
-// if (с%2==0){Console.WriteLine("четное");}
-// else {Console.WriteLine("нечетное");}
+if (b%2==0){Console.WriteLine("четное");}
+else {Console.WriteLine("нечетное");}
+
 WriteLine();
 WriteLine("7. Показать числа от -N до N");
 
@@ -106,13 +109,13 @@ WriteLine();
 WriteLine("9. Показать последнюю цифру трёхзначного числа");
 
 // int number = 234;
-// string text = Convert.ToString(number);
+// string text = ToString(number);
 // Console.WriteLine(text [2]);
 WriteLine();
 WriteLine("10. Показать вторую цифру трёхзначного числа");
 
 // int num = 234;
-// string t = Convert.ToString(num);
+// string t = ToString(num);
 // Console.WriteLine(t [1]);
 WriteLine();
 WriteLine("11. Дано число из отрезка [10, 99]. Показать наибольшую цифру числа");
@@ -123,9 +126,9 @@ WriteLine("11. Дано число из отрезка [10, 99]. Показат�
 // int ten = number4 / 10;
 // Console.WriteLine (ten);
 
-// string preunit = Convert.ToString(number4);
+// string preunit = ToString(number4);
 // char preunit1 = 'preunit[1]';
-// int unit = Convert.ToInt16(preunit1);
+// int unit = ToInt16(preunit1);
 // Console.WriteLine (unit);
 
 // if (ten > unit) Console.WriteLine (ten);
@@ -137,7 +140,7 @@ WriteLine();// -----------------------------------------------Семинар 08.
 WriteLine("12. Удалить вторую цифру трёхзначного числа");
 
 // int number5 = 465;
-// string totext = Convert.ToString(number5);
+// string totext = ToString(number5);
 // Console.Write($"{totext [0]}{totext [2]}");
 WriteLine();
 WriteLine("13. Выяснить, кратно ли число заданному, если нет, вывести остаток.");
