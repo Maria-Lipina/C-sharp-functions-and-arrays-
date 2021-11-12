@@ -26,7 +26,6 @@ WriteLine("Для решения уравнения ax^2+bx+c=0 введите �
 Write("a = ");
 double a1 = Convert.ToDouble(ReadLine());
 
-
 if (a1 == 0) 
 {
     WriteLine ("Недопустимое значение a");
@@ -35,7 +34,7 @@ if (a1 == 0)
 }
 
 Write("b = ");
-double b1 = Convert.ToDouble(ReadLine());;
+double b1 = Convert.ToDouble(ReadLine());
 
 Write("c = ");
 double c1 = Convert.ToDouble(ReadLine());

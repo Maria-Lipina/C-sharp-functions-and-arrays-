@@ -1,154 +1,163 @@
 ﻿using static System.Console;
 using static System.Convert;
+using System;
 
-// Почувствуй себя интерном (семинар 04.11.2021)
-WriteLine("0. Вывести квадрат числа");
+// // Почувствуй себя интерном (семинар 04.11.2021)
+// WriteLine("0. Вывести квадрат числа");
 
-int x = ToInt32(ReadLine());
-int power = x*x;
-WriteLine(power);
+// int x = ToInt32(ReadLine());
+// int power = x*x;
+// WriteLine(power);
 
-WriteLine();
-WriteLine("1. По двум заданным числам проверять является ли первое квадратом второго");
+// WriteLine();
+// WriteLine("1. По двум заданным числам проверять является ли первое квадратом второго");
 
-bool IsQuadrat (int x, int y)
-{
-int z = x*y;
-if (z==x) return true;
-else return false; 
-}
+// bool IsQuadrat (int x, int y)
+// {
+// int z = x*y;
+// if (z==x) return true;
+// else return false; 
+// }
 
-int x1 = ToInt32(ReadLine());
-int x2 = ToInt32(ReadLine());
-WriteLine(IsQuadrat(x1, x2));
+// int x1 = ToInt32(ReadLine());
+// int x2 = ToInt32(ReadLine());
+// WriteLine(IsQuadrat(x1, x2));
 
-WriteLine();
-WriteLine("2. Даны два числа. Показать большее и меньшее число");
+// WriteLine();
+// WriteLine("2. Даны два числа. Показать большее и меньшее число");
 
-void Compare (int x, int y)
-{
-if (y>x) Console.WriteLine(y + " больше " + x);
-else Console.WriteLine(x +" больше "+ y);
-}
+// void Compare (int x, int y)
+// {
+// if (y>x) Console.WriteLine(y + " больше " + x);
+// else Console.WriteLine(x +" больше "+ y);
+// }
 
-int x3 = ToInt32(ReadLine());
-int x4 = ToInt32(ReadLine());
-Compare(x3, x4);
+// int x3 = ToInt32(ReadLine());
+// int x4 = ToInt32(ReadLine());
+// Compare(x3, x4);
 
-WriteLine();
-WriteLine("3. По заданному номеру дня недели вывести его название");
+// WriteLine();
+// WriteLine("3. По заданному номеру дня недели вывести его название");
 
-int day = ToInt32(ReadLine());
+// int day = ToInt32(ReadLine());
 
-string name = day switch
-{
-1 => "понедельник",
-2 => "вторник",
-3 => "среда",
-4 => "четверг",
-5 => "пятница",
-6 => "суббота",
-7 => "воскресенье",
-_ => "нет дня недели с таким номером"
-};
-WriteLine(name);
+// string name = day switch
+// {
+// 1 => "понедельник",
+// 2 => "вторник",
+// 3 => "среда",
+// 4 => "четверг",
+// 5 => "пятница",
+// 6 => "суббота",
+// 7 => "воскресенье",
+// _ => "нет дня недели с таким номером"
+// };
+// WriteLine(name);
 
-WriteLine();
-WriteLine("4. Найти максимальное из 3 чисел");
+// WriteLine();
+// WriteLine("4. Найти максимальное из 3 чисел");
 
-int num = ToInt32(ReadLine());
-int num1 = ToInt32(ReadLine());
-int num2 = ToInt32(ReadLine());
+// int num = ToInt32(ReadLine());
+// int num1 = ToInt32(ReadLine());
+// int num2 = ToInt32(ReadLine());
 
-int max = num1;
-if (num1 > max) max = num1;
-if (num2 > max) max = num2;
-Console.WriteLine(max);
+// int max = num1;
+// if (num1 > max) max = num1;
+// if (num2 > max) max = num2;
+// Console.WriteLine(max);
 
-WriteLine();
-WriteLine("5. Написать программу вычисления значения функции y=f(a). Как уточнили потом: функция y=sin(a)");
+// WriteLine();
+// WriteLine("5. Написать программу вычисления значения функции y=f(a). Как уточнили потом: функция y=sin(a)");
 
-double sin(double a)
-{
-    return Math.Asin(a); //тот самый момент когда код работает, но как? Непонятно
-}
+// double sin(double a)
+// {
+//     return Math.Asin(a); //тот самый момент когда код работает, но как? Непонятно
+// }
 
-double a = sin(ToDouble(ReadLine()));
-Console.WriteLine(a);
+// double a = sin(ToDouble(ReadLine()));
+// Console.WriteLine(a);
 
-WriteLine();
-WriteLine("6. Выяснить является ли число чётным");
+// WriteLine();
+// WriteLine("6. Выяснить является ли число чётным");
 
-int b = ToInt32(ReadLine());
+// int b = ToInt32(ReadLine());
 
-if (b%2==0){Console.WriteLine("четное");}
-else {Console.WriteLine("нечетное");}
+// if (b%2==0){Console.WriteLine("четное");}
+// else {Console.WriteLine("нечетное");}
 
-WriteLine();
-WriteLine("7. Показать числа от -N до N");
+
+// WriteLine();
+// WriteLine("7. Показать числа от -N до N");
+
 void PrintArray(int[] collect)
 {
-    for (int pos = 0; pos < collect.Length; pos ++) Console.Write($"{collect[pos]} ");
-    Console.WriteLine();
-    Console.WriteLine();
+    for (int pos = 0; pos < collect.Length; pos ++) Write($"{collect[pos]} ");
+    WriteLine();
+    WriteLine();
 }
 
-int [] FillArray(int N)
+// int [] FillArray(int N)
+// {
+// int[] collect = new int[N+N+1];
+// for (int pos = 0; pos < collect.Length; pos++) 
+// {
+//     collect[pos] = -N;
+// N--; // тот самый момент, когда сначала написал код и только потом понял, почему он работает как надо.
+// }
+// return collect;
+// }
+// PrintArray(FillArray(ToInt32(ReadLine()))); // и превзошел самого себя по количеству скобочек на строку
+
+
+// WriteLine();
+// WriteLine("8. Показать четные числа от 1 до N");
+
+int[] SelectEvens(int n)
 {
-int[] collect = new int[N+N+1];
-for (int pos = 0; pos < collect.Length; pos++) 
-{
-    collect[pos] = -N;
-N--; // тот самый момент, когда сначала написал код и только потом понял, почему он работает как надо.
-}
-return collect;
-}
-PrintArray(FillArray(7));
 
-WriteLine();
-WriteLine("8. Показать четные числа от 1 до N");
+int [] result = new int [n+1];
 
-int n = 10;
-
-for (int i = 0; i<= n; i++)
+for (int i = 0; i<= result.Length; i++)
 {
     if (i%2==0)
     {
-    Console.WriteLine(i);
+    result [i] = i;
     }
 }
+return result;
+}
+
+PrintArray(SelectEvens(ToInt32(ReadLine())));
+
+// WriteLine();
+// WriteLine("9. Показать последнюю цифру трёхзначного числа");
+
+// int number = ToInt32(ReadLine());
+// string text = Convert.ToString(number);
+// WriteLine(text [0]);
+
+// WriteLine();
+// WriteLine("10. Показать вторую цифру трёхзначного числа");
+
+// int number1 = ToInt32(ReadLine());
+// string t = Convert.ToString(number1); // Какой-то внутренний баг платформы? Без Convert не распознает ToString, но и добавлять его опять для ВСЕЙ простыни из-за пары задач как-то некорректно. И сергея на спросишь. То ли просто потому что он не одобряет этих конвертаций, то ли потому что он объяснял, а я прослушала((()))
+// WriteLine(t [1]);
+
 
 WriteLine();
-WriteLine("9. Показать последнюю цифру трёхзначного числа");
+WriteLine("11. Дано число из отрезка [10, 99]. Показать наибольшую цифру числа. (ради интереся числа генерируются рандомно)");
 
-int number = 234;
-string text = (number);
-Console.WriteLine(text [0]);
+// int DigCompare(int n)
+// {
+// WriteLine (n);
+// int ten = n / 10;
+// int unit = n % 10;
+// if (ten > unit) return ten;
+// else return unit;
+// }
 
-WriteLine();
-WriteLine("10. Показать вторую цифру трёхзначного числа");
+// WriteLine(DigCompare(new Random().Next(10,99)));
 
-int number1 = 234;
-string t = IntToString(number1);
-Console.WriteLine(t [1]);
-
-
-WriteLine();
-WriteLine("11. Дано число из отрезка [10, 99]. Показать наибольшую цифру числа");
-
-// int number4 = new Random().Next(10,99);
-// Console.WriteLine (number4);
-
-// int ten = number4 / 10;
-// Console.WriteLine (ten);
-
-// string preunit = ToString(number4);
-// char preunit1 = 'preunit[1]';
-// int unit = ToInt16(preunit1);
-// Console.WriteLine (unit);
-
-// if (ten > unit) Console.WriteLine (ten);
-// else {Console.WriteLine (unit);}
 
 WriteLine();
 WriteLine();// -----------------------------------------------Семинар 08.11.2021
@@ -234,8 +243,7 @@ WriteLine();
 WriteLine("22. Найти расстояние между точками в пространстве 2D/3D");
 
 
-using static System.Console;
-using static System.Convert;
+//----------------------- Задачи, которые добавилмсь на семинаре 11.11.2021
 
 // Почувствуй себя мидлом
 // 23. Показать таблицу квадратов чисел от 1 до N 
