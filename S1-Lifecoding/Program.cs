@@ -89,12 +89,12 @@ using System;
 // WriteLine();
 // WriteLine("7. Показать числа от -N до N");
 
-// void PrintArray(int[] collect)
-// {
-//     for (int pos = 0; pos < collect.Length; pos ++) Write($"{collect[pos]} ");
-//     WriteLine();
-//     WriteLine();
-// }
+void PrintArray(int[] collect)
+{
+    for (int pos = 0; pos < collect.Length; pos ++) Write($"{collect[pos]} ");
+    WriteLine();
+    WriteLine();
+}
 
 // int [] FillArray(int N)
 // {
@@ -112,22 +112,22 @@ using System;
 // WriteLine();
 // WriteLine("8. Показать четные числа от 1 до N");
 
-// int[] SelectEvens(int n)
-// {
+int[] SelectEvens(int n)
+{
 
-// int [] result = new int [n+1];
+int [] result = new int [n+1];
 
-// for (int i = 0; i<= result.Length; i++)
-// {
-//     if (i%2==0)
-//     {
-//     result [i] = i;
-//     }
-// }
-// return result;
-// }
+for (int i = 0; i<= result.Length; i++)
+{
+    if (i%2==0)
+    {
+    result [i] = i;
+    }
+}
+return result;
+}
 
-// PrintArray(SelectEvens(ToInt32(ReadLine())));
+PrintArray(SelectEvens(ToInt32(ReadLine())));
 
 // WriteLine();
 // WriteLine("9. Показать последнюю цифру трёхзначного числа");
@@ -147,16 +147,16 @@ using System;
 WriteLine();
 WriteLine("11. Дано число из отрезка [10, 99]. Показать наибольшую цифру числа. (ради интереся числа генерируются рандомно)");
 
-int DigCompare(int n)
-{
-WriteLine (n);
-int ten = n / 10;
-int unit = n % 10;
-if (ten > unit) return ten;
-else return unit;
-}
+// int DigCompare(int n)
+// {
+// WriteLine (n);
+// int ten = n / 10;
+// int unit = n % 10;
+// if (ten > unit) return ten;
+// else return unit;
+// }
 
-WriteLine(DigCompare(new Random().Next(10,99)));
+// WriteLine(DigCompare(new Random().Next(10,99)));
 
 
 WriteLine();
